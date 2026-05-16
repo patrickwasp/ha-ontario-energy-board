@@ -82,7 +82,10 @@ ignore = [
 "tests/**/*" = ["PT", "B"]
 
 [tool.mypy]
-python_version = "3.12"
+# Intentionally not pinning ``python_version`` so each CI matrix entry
+# (3.12, 3.13) checks against its own runtime. Pinning to "3.12" makes mypy
+# reject PEP 696 (`T = int`) syntax it encounters in HA's own source when
+# run under 3.13.
 strict = true
 warn_unused_ignores = true
 warn_redundant_casts = true
