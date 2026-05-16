@@ -1,0 +1,259 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Commission de l'énergie de l'Ontario",
+        "description": "Choisissez le service à suivre.",
+        "data": {
+          "utility": "Service"
+        }
+      },
+      "distributor": {
+        "title": "Distributeur d'électricité",
+        "description": "Sélectionnez votre distributeur d'électricité. La liste provient du flux officiel OEB BillData.",
+        "data": {
+          "distributor": "Distributeur"
+        }
+      },
+      "class": {
+        "title": "Catégorie de client et tarif",
+        "description": "Choisissez la catégorie de client qui correspond à votre facture et le plan tarifaire à exposer comme capteurs.",
+        "data": {
+          "customer_class": "Catégorie de client",
+          "plan": "Plan tarifaire"
+        }
+      },
+      "gas_distributor": {
+        "title": "Distributeur de gaz",
+        "description": "Sélectionnez votre distributeur de gaz naturel.",
+        "data": {
+          "distributor": "Distributeur"
+        }
+      },
+      "gas_service_area": {
+        "title": "Zone de service",
+        "description": "Sélectionnez la zone de service de votre distributeur.",
+        "data": {
+          "service_area": "Zone de service"
+        }
+      },
+      "gas_rate_class": {
+        "title": "Classe tarifaire",
+        "description": "Sélectionnez votre classe tarifaire.",
+        "data": {
+          "rate_class": "Classe tarifaire"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de récupérer le flux OEB. Réessayez plus tard.",
+      "invalid_feed": "Le flux OEB n'a retourné aucune ligne utilisable."
+    },
+    "abort": {
+      "already_configured": "Cette configuration est déjà en place.",
+      "cannot_connect": "Impossible de récupérer le flux OEB. Réessayez plus tard.",
+      "invalid_feed": "Le flux OEB n'a retourné aucune ligne utilisable."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Plan tarifaire",
+        "description": "Modifiez quel plan tarifaire est exposé comme capteurs.",
+        "data": {
+          "plan": "Plan tarifaire"
+        }
+      }
+    }
+  },
+  "selector": {
+    "utility": {
+      "options": {
+        "electricity": "Électricité",
+        "gas": "Gaz naturel"
+      }
+    },
+    "plan": {
+      "options": {
+        "auto": "Auto (tout exposer)",
+        "tou": "Tarification selon l'heure",
+        "ulo": "Très basse la nuit",
+        "tiered": "Par paliers"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_tou_price": {
+        "name": "Tarif TOU actuel"
+      },
+      "current_tou_period": {
+        "name": "Période TOU actuelle",
+        "state": {
+          "on": "Pointe",
+          "mid": "Mi-pointe",
+          "off": "Hors pointe"
+        }
+      },
+      "current_ulo_price": {
+        "name": "Tarif ULO actuel"
+      },
+      "current_ulo_period": {
+        "name": "Période ULO actuelle",
+        "state": {
+          "overnight": "Nuit",
+          "weekend_off": "Hors pointe week-end",
+          "mid": "Mi-pointe",
+          "on": "Pointe"
+        }
+      },
+      "tou_on_peak_rate": {
+        "name": "Tarif TOU pointe"
+      },
+      "tou_mid_peak_rate": {
+        "name": "Tarif TOU mi-pointe"
+      },
+      "tou_off_peak_rate": {
+        "name": "Tarif TOU hors pointe"
+      },
+      "ulo_on_peak_rate": {
+        "name": "Tarif ULO pointe"
+      },
+      "ulo_mid_peak_rate": {
+        "name": "Tarif ULO mi-pointe"
+      },
+      "ulo_weekend_off_peak_rate": {
+        "name": "Tarif ULO hors pointe week-end"
+      },
+      "ulo_overnight_rate": {
+        "name": "Tarif ULO nuit"
+      },
+      "tier1_rate": {
+        "name": "Tarif palier 1"
+      },
+      "tier2_rate": {
+        "name": "Tarif palier 2"
+      },
+      "tier1_threshold": {
+        "name": "Seuil palier 1"
+      },
+      "service_charge": {
+        "name": "Frais de service"
+      },
+      "distribution_volumetric": {
+        "name": "Frais de distribution"
+      },
+      "network_charge": {
+        "name": "Frais de réseau"
+      },
+      "connection_charge": {
+        "name": "Frais de raccordement"
+      },
+      "wmsr_charge": {
+        "name": "Frais WMSR"
+      },
+      "rrrp_charge": {
+        "name": "Frais RRRP"
+      },
+      "sss_admin_fee": {
+        "name": "Frais administratifs SSS"
+      },
+      "loss_factor": {
+        "name": "Facteur de pertes"
+      },
+      "hst_rate": {
+        "name": "Taux TVH"
+      },
+      "rebate_rate": {
+        "name": "Remboursement de l'Ontario pour l'électricité"
+      },
+      "rate_year": {
+        "name": "Année tarifaire"
+      },
+      "gas_monthly_customer_charge": {
+        "name": "Frais mensuels fixes"
+      },
+      "gas_commodity_charge": {
+        "name": "Frais de commodité (gaz)"
+      },
+      "gas_commodity_pa": {
+        "name": "Ajustement du prix de commodité (gaz)"
+      },
+      "gas_transportation_charge": {
+        "name": "Frais de transport (gaz)"
+      },
+      "gas_transportation_pa": {
+        "name": "Ajustement du prix de transport (gaz)"
+      },
+      "gas_storage_charge": {
+        "name": "Frais de stockage (gaz)"
+      },
+      "gas_storage_pa": {
+        "name": "Ajustement du prix de stockage (gaz)"
+      },
+      "gas_delivery_pa": {
+        "name": "Ajustement du prix de livraison (gaz)"
+      },
+      "gas_federal_carbon_charge": {
+        "name": "Redevance fédérale sur le carbone (gaz)"
+      },
+      "gas_facility_carbon_charge": {
+        "name": "Redevance carbone d'installation (gaz)"
+      },
+      "gas_hst_rate": {
+        "name": "Taux TVH (gaz)"
+      },
+      "gas_effective_year": {
+        "name": "Année d'entrée en vigueur (gaz)"
+      },
+      "gas_typical_consumption": {
+        "name": "Consommation mensuelle typique"
+      },
+      "gas_delivery_tier_1_rate": {
+        "name": "Tarif palier 1 de livraison (gaz)"
+      },
+      "gas_delivery_tier_1_low": {
+        "name": "Limite inférieure palier 1 (gaz)"
+      },
+      "gas_delivery_tier_1_high": {
+        "name": "Limite supérieure palier 1 (gaz)"
+      },
+      "gas_delivery_tier_2_rate": {
+        "name": "Tarif palier 2 de livraison (gaz)"
+      },
+      "gas_delivery_tier_2_low": {
+        "name": "Limite inférieure palier 2 (gaz)"
+      },
+      "gas_delivery_tier_2_high": {
+        "name": "Limite supérieure palier 2 (gaz)"
+      },
+      "gas_delivery_tier_3_rate": {
+        "name": "Tarif palier 3 de livraison (gaz)"
+      },
+      "gas_delivery_tier_3_low": {
+        "name": "Limite inférieure palier 3 (gaz)"
+      },
+      "gas_delivery_tier_3_high": {
+        "name": "Limite supérieure palier 3 (gaz)"
+      },
+      "gas_delivery_tier_4_rate": {
+        "name": "Tarif palier 4 de livraison (gaz)"
+      },
+      "gas_delivery_tier_4_low": {
+        "name": "Limite inférieure palier 4 (gaz)"
+      },
+      "gas_delivery_tier_4_high": {
+        "name": "Limite supérieure palier 4 (gaz)"
+      },
+      "gas_delivery_tier_5_rate": {
+        "name": "Tarif palier 5 de livraison (gaz)"
+      },
+      "gas_delivery_tier_5_low": {
+        "name": "Limite inférieure palier 5 (gaz)"
+      },
+      "gas_delivery_tier_5_high": {
+        "name": "Limite supérieure palier 5 (gaz)"
+      }
+    }
+  }
+}

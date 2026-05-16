@@ -1,0 +1,259 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ontario Energy Board",
+        "description": "Wybierz, które źródło energii chcesz śledzić.",
+        "data": {
+          "utility": "Źródło energii"
+        }
+      },
+      "distributor": {
+        "title": "Dystrybutor energii elektrycznej",
+        "description": "Wybierz swojego dystrybutora energii elektrycznej. Lista pochodzi z oficjalnego źródła OEB BillData.",
+        "data": {
+          "distributor": "Dystrybutor"
+        }
+      },
+      "class": {
+        "title": "Klasa klienta i plan",
+        "description": "Wybierz klasę klienta odpowiadającą Twojemu rachunkowi oraz plan taryfowy do udostępnienia jako sensory.",
+        "data": {
+          "customer_class": "Klasa klienta",
+          "plan": "Plan taryfowy"
+        }
+      },
+      "gas_distributor": {
+        "title": "Dystrybutor gazu",
+        "description": "Wybierz swojego dystrybutora gazu ziemnego.",
+        "data": {
+          "distributor": "Dystrybutor"
+        }
+      },
+      "gas_service_area": {
+        "title": "Obszar obsługi",
+        "description": "Wybierz obszar obsługi swojego dystrybutora.",
+        "data": {
+          "service_area": "Obszar obsługi"
+        }
+      },
+      "gas_rate_class": {
+        "title": "Klasa taryfowa",
+        "description": "Wybierz swoją klasę taryfową.",
+        "data": {
+          "rate_class": "Klasa taryfowa"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie udało się pobrać źródła OEB. Spróbuj ponownie później.",
+      "invalid_feed": "Źródło OEB nie zwróciło użytecznych wierszy."
+    },
+    "abort": {
+      "already_configured": "Ta konfiguracja jest już skonfigurowana.",
+      "cannot_connect": "Nie udało się pobrać źródła OEB. Spróbuj ponownie później.",
+      "invalid_feed": "Źródło OEB nie zwróciło użytecznych wierszy."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Plan taryfowy",
+        "description": "Zmień, który plan taryfowy jest udostępniany jako sensory.",
+        "data": {
+          "plan": "Plan taryfowy"
+        }
+      }
+    }
+  },
+  "selector": {
+    "utility": {
+      "options": {
+        "electricity": "Energia elektryczna",
+        "gas": "Gaz ziemny"
+      }
+    },
+    "plan": {
+      "options": {
+        "auto": "Auto (pokaż wszystkie)",
+        "tou": "Taryfa godzinowa",
+        "ulo": "Taryfa nocna ultraniska",
+        "tiered": "Strefowa"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_tou_price": {
+        "name": "Aktualna cena TOU"
+      },
+      "current_tou_period": {
+        "name": "Aktualna strefa TOU",
+        "state": {
+          "on": "Szczyt",
+          "mid": "Średni szczyt",
+          "off": "Pozaszczytowa"
+        }
+      },
+      "current_ulo_price": {
+        "name": "Aktualna cena ULO"
+      },
+      "current_ulo_period": {
+        "name": "Aktualna strefa ULO",
+        "state": {
+          "overnight": "Noc",
+          "weekend_off": "Pozaszczytowa weekendowa",
+          "mid": "Średni szczyt",
+          "on": "Szczyt"
+        }
+      },
+      "tou_on_peak_rate": {
+        "name": "Stawka TOU szczytowa"
+      },
+      "tou_mid_peak_rate": {
+        "name": "Stawka TOU średniego szczytu"
+      },
+      "tou_off_peak_rate": {
+        "name": "Stawka TOU pozaszczytowa"
+      },
+      "ulo_on_peak_rate": {
+        "name": "Stawka ULO szczytowa"
+      },
+      "ulo_mid_peak_rate": {
+        "name": "Stawka ULO średniego szczytu"
+      },
+      "ulo_weekend_off_peak_rate": {
+        "name": "Stawka ULO pozaszczytowa weekendowa"
+      },
+      "ulo_overnight_rate": {
+        "name": "Stawka ULO nocna"
+      },
+      "tier1_rate": {
+        "name": "Stawka strefy 1"
+      },
+      "tier2_rate": {
+        "name": "Stawka strefy 2"
+      },
+      "tier1_threshold": {
+        "name": "Próg strefy 1"
+      },
+      "service_charge": {
+        "name": "Opłata abonamentowa"
+      },
+      "distribution_volumetric": {
+        "name": "Opłata dystrybucyjna"
+      },
+      "network_charge": {
+        "name": "Opłata sieciowa"
+      },
+      "connection_charge": {
+        "name": "Opłata przyłączeniowa"
+      },
+      "wmsr_charge": {
+        "name": "Opłata WMSR"
+      },
+      "rrrp_charge": {
+        "name": "Opłata RRRP"
+      },
+      "sss_admin_fee": {
+        "name": "Opłata administracyjna SSS"
+      },
+      "loss_factor": {
+        "name": "Współczynnik strat"
+      },
+      "hst_rate": {
+        "name": "Stawka HST"
+      },
+      "rebate_rate": {
+        "name": "Zwrot za energię w Ontario"
+      },
+      "rate_year": {
+        "name": "Rok taryfowy"
+      },
+      "gas_monthly_customer_charge": {
+        "name": "Miesięczna opłata stała"
+      },
+      "gas_commodity_charge": {
+        "name": "Opłata za surowiec (gaz)"
+      },
+      "gas_commodity_pa": {
+        "name": "Korekta ceny surowca (gaz)"
+      },
+      "gas_transportation_charge": {
+        "name": "Opłata przesyłowa (gaz)"
+      },
+      "gas_transportation_pa": {
+        "name": "Korekta opłaty przesyłowej (gaz)"
+      },
+      "gas_storage_charge": {
+        "name": "Opłata za magazynowanie (gaz)"
+      },
+      "gas_storage_pa": {
+        "name": "Korekta opłaty za magazynowanie (gaz)"
+      },
+      "gas_delivery_pa": {
+        "name": "Korekta opłaty dystrybucyjnej (gaz)"
+      },
+      "gas_federal_carbon_charge": {
+        "name": "Federalna opłata węglowa (gaz)"
+      },
+      "gas_facility_carbon_charge": {
+        "name": "Opłata węglowa zakładu (gaz)"
+      },
+      "gas_hst_rate": {
+        "name": "Stawka HST (gaz)"
+      },
+      "gas_effective_year": {
+        "name": "Rok obowiązywania (gaz)"
+      },
+      "gas_typical_consumption": {
+        "name": "Typowe miesięczne zużycie"
+      },
+      "gas_delivery_tier_1_rate": {
+        "name": "Stawka strefy 1 dostawy (gaz)"
+      },
+      "gas_delivery_tier_1_low": {
+        "name": "Dolna granica strefy 1 (gaz)"
+      },
+      "gas_delivery_tier_1_high": {
+        "name": "Górna granica strefy 1 (gaz)"
+      },
+      "gas_delivery_tier_2_rate": {
+        "name": "Stawka strefy 2 dostawy (gaz)"
+      },
+      "gas_delivery_tier_2_low": {
+        "name": "Dolna granica strefy 2 (gaz)"
+      },
+      "gas_delivery_tier_2_high": {
+        "name": "Górna granica strefy 2 (gaz)"
+      },
+      "gas_delivery_tier_3_rate": {
+        "name": "Stawka strefy 3 dostawy (gaz)"
+      },
+      "gas_delivery_tier_3_low": {
+        "name": "Dolna granica strefy 3 (gaz)"
+      },
+      "gas_delivery_tier_3_high": {
+        "name": "Górna granica strefy 3 (gaz)"
+      },
+      "gas_delivery_tier_4_rate": {
+        "name": "Stawka strefy 4 dostawy (gaz)"
+      },
+      "gas_delivery_tier_4_low": {
+        "name": "Dolna granica strefy 4 (gaz)"
+      },
+      "gas_delivery_tier_4_high": {
+        "name": "Górna granica strefy 4 (gaz)"
+      },
+      "gas_delivery_tier_5_rate": {
+        "name": "Stawka strefy 5 dostawy (gaz)"
+      },
+      "gas_delivery_tier_5_low": {
+        "name": "Dolna granica strefy 5 (gaz)"
+      },
+      "gas_delivery_tier_5_high": {
+        "name": "Górna granica strefy 5 (gaz)"
+      }
+    }
+  }
+}

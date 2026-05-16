@@ -1,0 +1,259 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "هيئة الطاقة في أونتاريو",
+        "description": "اختر الخدمة التي تريد تتبعها.",
+        "data": {
+          "utility": "الخدمة"
+        }
+      },
+      "distributor": {
+        "title": "موزع الكهرباء",
+        "description": "اختر موزع الكهرباء الخاص بك. القائمة مصدرها تغذية OEB BillData الرسمية.",
+        "data": {
+          "distributor": "الموزع"
+        }
+      },
+      "class": {
+        "title": "فئة العميل والخطة",
+        "description": "اختر فئة العميل المطابقة لفاتورتك وخطة التسعير لعرضها كمستشعرات.",
+        "data": {
+          "customer_class": "فئة العميل",
+          "plan": "خطة التسعير"
+        }
+      },
+      "gas_distributor": {
+        "title": "موزع الغاز",
+        "description": "اختر موزع الغاز الطبيعي الخاص بك.",
+        "data": {
+          "distributor": "الموزع"
+        }
+      },
+      "gas_service_area": {
+        "title": "منطقة الخدمة",
+        "description": "اختر منطقة الخدمة الخاصة بموزعك.",
+        "data": {
+          "service_area": "منطقة الخدمة"
+        }
+      },
+      "gas_rate_class": {
+        "title": "فئة التعرفة",
+        "description": "اختر فئة التعرفة الخاصة بك.",
+        "data": {
+          "rate_class": "فئة التعرفة"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "تعذر جلب تغذية OEB. أعد المحاولة لاحقًا.",
+      "invalid_feed": "لم تُرجع تغذية OEB أي صفوف صالحة."
+    },
+    "abort": {
+      "already_configured": "هذا التكوين تم إعداده بالفعل.",
+      "cannot_connect": "تعذر جلب تغذية OEB. أعد المحاولة لاحقًا.",
+      "invalid_feed": "لم تُرجع تغذية OEB أي صفوف صالحة."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "خطة التسعير",
+        "description": "غيّر خطة التسعير التي تُعرض كمستشعرات.",
+        "data": {
+          "plan": "خطة التسعير"
+        }
+      }
+    }
+  },
+  "selector": {
+    "utility": {
+      "options": {
+        "electricity": "كهرباء",
+        "gas": "غاز طبيعي"
+      }
+    },
+    "plan": {
+      "options": {
+        "auto": "تلقائي (عرض الكل)",
+        "tou": "التسعير حسب وقت الاستخدام",
+        "ulo": "التسعير الليلي المنخفض جدًا",
+        "tiered": "متدرج"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_tou_price": {
+        "name": "سعر TOU الحالي"
+      },
+      "current_tou_period": {
+        "name": "فترة TOU الحالية",
+        "state": {
+          "on": "ذروة",
+          "mid": "متوسطة الذروة",
+          "off": "خارج الذروة"
+        }
+      },
+      "current_ulo_price": {
+        "name": "سعر ULO الحالي"
+      },
+      "current_ulo_period": {
+        "name": "فترة ULO الحالية",
+        "state": {
+          "overnight": "ليلي",
+          "weekend_off": "خارج الذروة في عطلة نهاية الأسبوع",
+          "mid": "متوسطة الذروة",
+          "on": "ذروة"
+        }
+      },
+      "tou_on_peak_rate": {
+        "name": "سعر TOU في الذروة"
+      },
+      "tou_mid_peak_rate": {
+        "name": "سعر TOU متوسط الذروة"
+      },
+      "tou_off_peak_rate": {
+        "name": "سعر TOU خارج الذروة"
+      },
+      "ulo_on_peak_rate": {
+        "name": "سعر ULO في الذروة"
+      },
+      "ulo_mid_peak_rate": {
+        "name": "سعر ULO متوسط الذروة"
+      },
+      "ulo_weekend_off_peak_rate": {
+        "name": "سعر ULO خارج الذروة في عطلة نهاية الأسبوع"
+      },
+      "ulo_overnight_rate": {
+        "name": "سعر ULO الليلي"
+      },
+      "tier1_rate": {
+        "name": "سعر المستوى 1"
+      },
+      "tier2_rate": {
+        "name": "سعر المستوى 2"
+      },
+      "tier1_threshold": {
+        "name": "حد المستوى 1"
+      },
+      "service_charge": {
+        "name": "رسوم الخدمة"
+      },
+      "distribution_volumetric": {
+        "name": "رسوم التوزيع"
+      },
+      "network_charge": {
+        "name": "رسوم الشبكة"
+      },
+      "connection_charge": {
+        "name": "رسوم التوصيل"
+      },
+      "wmsr_charge": {
+        "name": "رسوم WMSR"
+      },
+      "rrrp_charge": {
+        "name": "رسوم RRRP"
+      },
+      "sss_admin_fee": {
+        "name": "رسوم إدارية SSS"
+      },
+      "loss_factor": {
+        "name": "معامل الفقد"
+      },
+      "hst_rate": {
+        "name": "معدل HST"
+      },
+      "rebate_rate": {
+        "name": "خصم كهرباء أونتاريو"
+      },
+      "rate_year": {
+        "name": "سنة التعرفة"
+      },
+      "gas_monthly_customer_charge": {
+        "name": "رسوم شهرية ثابتة"
+      },
+      "gas_commodity_charge": {
+        "name": "رسوم السلعة (غاز)"
+      },
+      "gas_commodity_pa": {
+        "name": "تعديل سعر السلعة (غاز)"
+      },
+      "gas_transportation_charge": {
+        "name": "رسوم النقل (غاز)"
+      },
+      "gas_transportation_pa": {
+        "name": "تعديل سعر النقل (غاز)"
+      },
+      "gas_storage_charge": {
+        "name": "رسوم التخزين (غاز)"
+      },
+      "gas_storage_pa": {
+        "name": "تعديل سعر التخزين (غاز)"
+      },
+      "gas_delivery_pa": {
+        "name": "تعديل سعر التسليم (غاز)"
+      },
+      "gas_federal_carbon_charge": {
+        "name": "رسوم كربون فيدرالية (غاز)"
+      },
+      "gas_facility_carbon_charge": {
+        "name": "رسوم كربون المنشأة (غاز)"
+      },
+      "gas_hst_rate": {
+        "name": "معدل HST (غاز)"
+      },
+      "gas_effective_year": {
+        "name": "سنة سريان التعرفة (غاز)"
+      },
+      "gas_typical_consumption": {
+        "name": "الاستهلاك الشهري النموذجي"
+      },
+      "gas_delivery_tier_1_rate": {
+        "name": "سعر مستوى 1 للتسليم (غاز)"
+      },
+      "gas_delivery_tier_1_low": {
+        "name": "الحد الأدنى للمستوى 1 (غاز)"
+      },
+      "gas_delivery_tier_1_high": {
+        "name": "الحد الأعلى للمستوى 1 (غاز)"
+      },
+      "gas_delivery_tier_2_rate": {
+        "name": "سعر مستوى 2 للتسليم (غاز)"
+      },
+      "gas_delivery_tier_2_low": {
+        "name": "الحد الأدنى للمستوى 2 (غاز)"
+      },
+      "gas_delivery_tier_2_high": {
+        "name": "الحد الأعلى للمستوى 2 (غاز)"
+      },
+      "gas_delivery_tier_3_rate": {
+        "name": "سعر مستوى 3 للتسليم (غاز)"
+      },
+      "gas_delivery_tier_3_low": {
+        "name": "الحد الأدنى للمستوى 3 (غاز)"
+      },
+      "gas_delivery_tier_3_high": {
+        "name": "الحد الأعلى للمستوى 3 (غاز)"
+      },
+      "gas_delivery_tier_4_rate": {
+        "name": "سعر مستوى 4 للتسليم (غاز)"
+      },
+      "gas_delivery_tier_4_low": {
+        "name": "الحد الأدنى للمستوى 4 (غاز)"
+      },
+      "gas_delivery_tier_4_high": {
+        "name": "الحد الأعلى للمستوى 4 (غاز)"
+      },
+      "gas_delivery_tier_5_rate": {
+        "name": "سعر مستوى 5 للتسليم (غاز)"
+      },
+      "gas_delivery_tier_5_low": {
+        "name": "الحد الأدنى للمستوى 5 (غاز)"
+      },
+      "gas_delivery_tier_5_high": {
+        "name": "الحد الأعلى للمستوى 5 (غاز)"
+      }
+    }
+  }
+}

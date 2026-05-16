@@ -1,0 +1,259 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "اونٹاریو انرجی بورڈ",
+        "description": "اس سہولت کا انتخاب کریں جسے آپ ٹریک کرنا چاہتے ہیں۔",
+        "data": {
+          "utility": "سہولت"
+        }
+      },
+      "distributor": {
+        "title": "بجلی کا تقسیم کار",
+        "description": "اپنا بجلی کا تقسیم کار منتخب کریں۔ فہرست OEB BillData کے سرکاری فیڈ سے لی گئی ہے۔",
+        "data": {
+          "distributor": "تقسیم کار"
+        }
+      },
+      "class": {
+        "title": "صارف کی قسم اور منصوبہ",
+        "description": "اپنے بل سے مماثل صارف کی قسم اور سینسرز کے طور پر ظاہر ہونے والا قیمتوں کا منصوبہ منتخب کریں۔",
+        "data": {
+          "customer_class": "صارف کی قسم",
+          "plan": "قیمتوں کا منصوبہ"
+        }
+      },
+      "gas_distributor": {
+        "title": "گیس کا تقسیم کار",
+        "description": "اپنا قدرتی گیس کا تقسیم کار منتخب کریں۔",
+        "data": {
+          "distributor": "تقسیم کار"
+        }
+      },
+      "gas_service_area": {
+        "title": "خدمت کا علاقہ",
+        "description": "اپنے تقسیم کار کے لیے خدمت کا علاقہ منتخب کریں۔",
+        "data": {
+          "service_area": "خدمت کا علاقہ"
+        }
+      },
+      "gas_rate_class": {
+        "title": "شرح کی قسم",
+        "description": "اپنی شرح کی قسم منتخب کریں۔",
+        "data": {
+          "rate_class": "شرح کی قسم"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "OEB فیڈ حاصل نہیں ہو سکا۔ بعد میں دوبارہ کوشش کریں۔",
+      "invalid_feed": "OEB فیڈ نے کوئی قابل استعمال قطار واپس نہیں کی۔"
+    },
+    "abort": {
+      "already_configured": "یہ ترتیب پہلے سے قائم ہے۔",
+      "cannot_connect": "OEB فیڈ حاصل نہیں ہو سکا۔ بعد میں دوبارہ کوشش کریں۔",
+      "invalid_feed": "OEB فیڈ نے کوئی قابل استعمال قطار واپس نہیں کی۔"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "قیمتوں کا منصوبہ",
+        "description": "تبدیل کریں کہ کون سا قیمتوں کا منصوبہ سینسرز کے طور پر ظاہر ہوتا ہے۔",
+        "data": {
+          "plan": "قیمتوں کا منصوبہ"
+        }
+      }
+    }
+  },
+  "selector": {
+    "utility": {
+      "options": {
+        "electricity": "بجلی",
+        "gas": "قدرتی گیس"
+      }
+    },
+    "plan": {
+      "options": {
+        "auto": "خودکار (سب دکھائیں)",
+        "tou": "وقت استعمال کی قیمت",
+        "ulo": "انتہائی کم رات کی قیمت",
+        "tiered": "درجہ بند"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_tou_price": {
+        "name": "موجودہ TOU قیمت"
+      },
+      "current_tou_period": {
+        "name": "موجودہ TOU مدت",
+        "state": {
+          "on": "چوٹی",
+          "mid": "درمیانی چوٹی",
+          "off": "غیر چوٹی"
+        }
+      },
+      "current_ulo_price": {
+        "name": "موجودہ ULO قیمت"
+      },
+      "current_ulo_period": {
+        "name": "موجودہ ULO مدت",
+        "state": {
+          "overnight": "رات",
+          "weekend_off": "ویک اینڈ غیر چوٹی",
+          "mid": "درمیانی چوٹی",
+          "on": "چوٹی"
+        }
+      },
+      "tou_on_peak_rate": {
+        "name": "TOU چوٹی کی شرح"
+      },
+      "tou_mid_peak_rate": {
+        "name": "TOU درمیانی چوٹی کی شرح"
+      },
+      "tou_off_peak_rate": {
+        "name": "TOU غیر چوٹی کی شرح"
+      },
+      "ulo_on_peak_rate": {
+        "name": "ULO چوٹی کی شرح"
+      },
+      "ulo_mid_peak_rate": {
+        "name": "ULO درمیانی چوٹی کی شرح"
+      },
+      "ulo_weekend_off_peak_rate": {
+        "name": "ULO ویک اینڈ غیر چوٹی کی شرح"
+      },
+      "ulo_overnight_rate": {
+        "name": "ULO رات کی شرح"
+      },
+      "tier1_rate": {
+        "name": "درجہ 1 شرح"
+      },
+      "tier2_rate": {
+        "name": "درجہ 2 شرح"
+      },
+      "tier1_threshold": {
+        "name": "درجہ 1 حد"
+      },
+      "service_charge": {
+        "name": "سروس چارج"
+      },
+      "distribution_volumetric": {
+        "name": "تقسیم چارج"
+      },
+      "network_charge": {
+        "name": "نیٹ ورک چارج"
+      },
+      "connection_charge": {
+        "name": "کنکشن چارج"
+      },
+      "wmsr_charge": {
+        "name": "WMSR چارج"
+      },
+      "rrrp_charge": {
+        "name": "RRRP چارج"
+      },
+      "sss_admin_fee": {
+        "name": "SSS انتظامی فیس"
+      },
+      "loss_factor": {
+        "name": "نقصان کا عنصر"
+      },
+      "hst_rate": {
+        "name": "HST شرح"
+      },
+      "rebate_rate": {
+        "name": "اونٹاریو بجلی رعایت"
+      },
+      "rate_year": {
+        "name": "شرح کا سال"
+      },
+      "gas_monthly_customer_charge": {
+        "name": "ماہانہ مقررہ چارج"
+      },
+      "gas_commodity_charge": {
+        "name": "گیس کموڈٹی چارج"
+      },
+      "gas_commodity_pa": {
+        "name": "گیس کموڈٹی قیمت ایڈجسٹمنٹ"
+      },
+      "gas_transportation_charge": {
+        "name": "گیس نقل و حمل چارج"
+      },
+      "gas_transportation_pa": {
+        "name": "گیس نقل و حمل قیمت ایڈجسٹمنٹ"
+      },
+      "gas_storage_charge": {
+        "name": "گیس ذخیرہ چارج"
+      },
+      "gas_storage_pa": {
+        "name": "گیس ذخیرہ قیمت ایڈجسٹمنٹ"
+      },
+      "gas_delivery_pa": {
+        "name": "گیس فراہمی قیمت ایڈجسٹمنٹ"
+      },
+      "gas_federal_carbon_charge": {
+        "name": "وفاقی کاربن چارج (گیس)"
+      },
+      "gas_facility_carbon_charge": {
+        "name": "تنصیب کاربن چارج (گیس)"
+      },
+      "gas_hst_rate": {
+        "name": "HST شرح (گیس)"
+      },
+      "gas_effective_year": {
+        "name": "شرح کا نافذ العمل سال (گیس)"
+      },
+      "gas_typical_consumption": {
+        "name": "عام ماہانہ استعمال"
+      },
+      "gas_delivery_tier_1_rate": {
+        "name": "درجہ 1 فراہمی کی شرح (گیس)"
+      },
+      "gas_delivery_tier_1_low": {
+        "name": "درجہ 1 نچلی حد (گیس)"
+      },
+      "gas_delivery_tier_1_high": {
+        "name": "درجہ 1 اوپری حد (گیس)"
+      },
+      "gas_delivery_tier_2_rate": {
+        "name": "درجہ 2 فراہمی کی شرح (گیس)"
+      },
+      "gas_delivery_tier_2_low": {
+        "name": "درجہ 2 نچلی حد (گیس)"
+      },
+      "gas_delivery_tier_2_high": {
+        "name": "درجہ 2 اوپری حد (گیس)"
+      },
+      "gas_delivery_tier_3_rate": {
+        "name": "درجہ 3 فراہمی کی شرح (گیس)"
+      },
+      "gas_delivery_tier_3_low": {
+        "name": "درجہ 3 نچلی حد (گیس)"
+      },
+      "gas_delivery_tier_3_high": {
+        "name": "درجہ 3 اوپری حد (گیس)"
+      },
+      "gas_delivery_tier_4_rate": {
+        "name": "درجہ 4 فراہمی کی شرح (گیس)"
+      },
+      "gas_delivery_tier_4_low": {
+        "name": "درجہ 4 نچلی حد (گیس)"
+      },
+      "gas_delivery_tier_4_high": {
+        "name": "درجہ 4 اوپری حد (گیس)"
+      },
+      "gas_delivery_tier_5_rate": {
+        "name": "درجہ 5 فراہمی کی شرح (گیس)"
+      },
+      "gas_delivery_tier_5_low": {
+        "name": "درجہ 5 نچلی حد (گیس)"
+      },
+      "gas_delivery_tier_5_high": {
+        "name": "درجہ 5 اوپری حد (گیس)"
+      }
+    }
+  }
+}

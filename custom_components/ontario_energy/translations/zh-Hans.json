@@ -1,0 +1,259 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "安大略能源委员会",
+        "description": "选择您要跟踪的公用事业。",
+        "data": {
+          "utility": "公用事业"
+        }
+      },
+      "distributor": {
+        "title": "配电商",
+        "description": "选择您的配电商。列表来源于官方 OEB BillData 数据源。",
+        "data": {
+          "distributor": "配电商"
+        }
+      },
+      "class": {
+        "title": "客户类别与方案",
+        "description": "选择与您账单匹配的客户类别,以及要作为传感器公开的定价方案。",
+        "data": {
+          "customer_class": "客户类别",
+          "plan": "定价方案"
+        }
+      },
+      "gas_distributor": {
+        "title": "天然气配气商",
+        "description": "选择您的天然气配气商。",
+        "data": {
+          "distributor": "配电商"
+        }
+      },
+      "gas_service_area": {
+        "title": "服务区域",
+        "description": "选择您的配气商的服务区域。",
+        "data": {
+          "service_area": "服务区域"
+        }
+      },
+      "gas_rate_class": {
+        "title": "费率类别",
+        "description": "选择您的费率类别。",
+        "data": {
+          "rate_class": "费率类别"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "无法获取 OEB 数据。请稍后重试。",
+      "invalid_feed": "OEB 数据未返回可用行。"
+    },
+    "abort": {
+      "already_configured": "此配置已设置。",
+      "cannot_connect": "无法获取 OEB 数据。请稍后重试。",
+      "invalid_feed": "OEB 数据未返回可用行。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "定价方案",
+        "description": "更改作为传感器公开的定价方案。",
+        "data": {
+          "plan": "定价方案"
+        }
+      }
+    }
+  },
+  "selector": {
+    "utility": {
+      "options": {
+        "electricity": "电力",
+        "gas": "天然气"
+      }
+    },
+    "plan": {
+      "options": {
+        "auto": "自动(显示全部)",
+        "tou": "分时电价",
+        "ulo": "夜间超低电价",
+        "tiered": "阶梯电价"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_tou_price": {
+        "name": "当前 TOU 电价"
+      },
+      "current_tou_period": {
+        "name": "当前 TOU 时段",
+        "state": {
+          "on": "高峰",
+          "mid": "中峰",
+          "off": "低峰"
+        }
+      },
+      "current_ulo_price": {
+        "name": "当前 ULO 电价"
+      },
+      "current_ulo_period": {
+        "name": "当前 ULO 时段",
+        "state": {
+          "overnight": "夜间",
+          "weekend_off": "周末低峰",
+          "mid": "中峰",
+          "on": "高峰"
+        }
+      },
+      "tou_on_peak_rate": {
+        "name": "TOU 高峰电价"
+      },
+      "tou_mid_peak_rate": {
+        "name": "TOU 中峰电价"
+      },
+      "tou_off_peak_rate": {
+        "name": "TOU 低峰电价"
+      },
+      "ulo_on_peak_rate": {
+        "name": "ULO 高峰电价"
+      },
+      "ulo_mid_peak_rate": {
+        "name": "ULO 中峰电价"
+      },
+      "ulo_weekend_off_peak_rate": {
+        "name": "ULO 周末低峰电价"
+      },
+      "ulo_overnight_rate": {
+        "name": "ULO 夜间电价"
+      },
+      "tier1_rate": {
+        "name": "第 1 阶梯电价"
+      },
+      "tier2_rate": {
+        "name": "第 2 阶梯电价"
+      },
+      "tier1_threshold": {
+        "name": "第 1 阶梯阈值"
+      },
+      "service_charge": {
+        "name": "服务费"
+      },
+      "distribution_volumetric": {
+        "name": "配电费"
+      },
+      "network_charge": {
+        "name": "输电网络费"
+      },
+      "connection_charge": {
+        "name": "接入费"
+      },
+      "wmsr_charge": {
+        "name": "WMSR 费用"
+      },
+      "rrrp_charge": {
+        "name": "RRRP 费用"
+      },
+      "sss_admin_fee": {
+        "name": "SSS 管理费"
+      },
+      "loss_factor": {
+        "name": "损耗系数"
+      },
+      "hst_rate": {
+        "name": "HST 税率"
+      },
+      "rebate_rate": {
+        "name": "安大略电力补贴"
+      },
+      "rate_year": {
+        "name": "电价年度"
+      },
+      "gas_monthly_customer_charge": {
+        "name": "每月固定费用"
+      },
+      "gas_commodity_charge": {
+        "name": "天然气商品费"
+      },
+      "gas_commodity_pa": {
+        "name": "天然气商品价格调整"
+      },
+      "gas_transportation_charge": {
+        "name": "天然气输气费"
+      },
+      "gas_transportation_pa": {
+        "name": "天然气输气价格调整"
+      },
+      "gas_storage_charge": {
+        "name": "天然气储存费"
+      },
+      "gas_storage_pa": {
+        "name": "天然气储存价格调整"
+      },
+      "gas_delivery_pa": {
+        "name": "天然气配送价格调整"
+      },
+      "gas_federal_carbon_charge": {
+        "name": "联邦碳费(天然气)"
+      },
+      "gas_facility_carbon_charge": {
+        "name": "设施碳费(天然气)"
+      },
+      "gas_hst_rate": {
+        "name": "HST 税率(天然气)"
+      },
+      "gas_effective_year": {
+        "name": "费率生效年度(天然气)"
+      },
+      "gas_typical_consumption": {
+        "name": "典型月度用气量"
+      },
+      "gas_delivery_tier_1_rate": {
+        "name": "第 1 阶梯配送费(天然气)"
+      },
+      "gas_delivery_tier_1_low": {
+        "name": "第 1 阶梯下限(天然气)"
+      },
+      "gas_delivery_tier_1_high": {
+        "name": "第 1 阶梯上限(天然气)"
+      },
+      "gas_delivery_tier_2_rate": {
+        "name": "第 2 阶梯配送费(天然气)"
+      },
+      "gas_delivery_tier_2_low": {
+        "name": "第 2 阶梯下限(天然气)"
+      },
+      "gas_delivery_tier_2_high": {
+        "name": "第 2 阶梯上限(天然气)"
+      },
+      "gas_delivery_tier_3_rate": {
+        "name": "第 3 阶梯配送费(天然气)"
+      },
+      "gas_delivery_tier_3_low": {
+        "name": "第 3 阶梯下限(天然气)"
+      },
+      "gas_delivery_tier_3_high": {
+        "name": "第 3 阶梯上限(天然气)"
+      },
+      "gas_delivery_tier_4_rate": {
+        "name": "第 4 阶梯配送费(天然气)"
+      },
+      "gas_delivery_tier_4_low": {
+        "name": "第 4 阶梯下限(天然气)"
+      },
+      "gas_delivery_tier_4_high": {
+        "name": "第 4 阶梯上限(天然气)"
+      },
+      "gas_delivery_tier_5_rate": {
+        "name": "第 5 阶梯配送费(天然气)"
+      },
+      "gas_delivery_tier_5_low": {
+        "name": "第 5 阶梯下限(天然气)"
+      },
+      "gas_delivery_tier_5_high": {
+        "name": "第 5 阶梯上限(天然气)"
+      }
+    }
+  }
+}

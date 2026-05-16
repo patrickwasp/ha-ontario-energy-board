@@ -1,0 +1,12 @@
+{
+  "domain": "ontario_energy",
+  "name": "Ontario Energy Board",
+  "codeowners": ["@patrickwasp"],
+  "config_flow": true,
+  "documentation": "https://github.com/patrickwasp/ha-ontario-energy-board",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/patrickwasp/ha-ontario-energy-board/issues",
+  "quality_scale": "bronze",
+  "requirements": ["defusedxml==0.7.1"],
+  "version": "0.3.0"
+}
