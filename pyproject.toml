@@ -25,8 +25,18 @@ dev = [
     "defusedxml==0.7.1",
 ]
 
-[tool.setuptools.packages.find]
-include = ["custom_components*"]
+# Intentionally do not install any source code. HACS file-copies the
+# `custom_components/ontario_energy/` directory into the user's HA config —
+# the integration is never a pip-installable Python package. pyproject.toml
+# exists only to bundle dev dependencies and tooling config.
+#
+# Installing as an editable package would register a "lenient" namespace
+# finder for `custom_components/`, whose pseudo-path then breaks HA's
+# `loader._get_custom_components` at test time (it calls `Path.iterdir()`
+# on the path string and gets a FileNotFoundError).
+[tool.setuptools]
+packages = []
+py-modules = []
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
