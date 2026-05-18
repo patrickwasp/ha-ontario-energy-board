@@ -26,7 +26,7 @@ FIXTURES_DIR = Path(__file__).parent / "fixtures"
 @pytest.fixture(autouse=True)
 def auto_enable_custom_integrations(
     enable_custom_integrations: object,
-) -> Generator[None, None, None]:
+) -> Generator[None]:
     """Ensure HA discovers ``custom_components/ontario_energy`` in every test."""
     yield
 

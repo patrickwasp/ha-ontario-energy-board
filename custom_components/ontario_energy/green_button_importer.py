@@ -19,9 +19,14 @@ from decimal import Decimal
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from homeassistant.components.recorder.models import StatisticData, StatisticMetaData
+from homeassistant.components.recorder.models import (
+    StatisticData,
+    StatisticMeanType,
+    StatisticMetaData,
+)
 from homeassistant.components.recorder.statistics import async_add_external_statistics
 from homeassistant.const import UnitOfEnergy, UnitOfVolume
+from homeassistant.util.unit_conversion import EnergyConverter, VolumeConverter
 
 from .const import (
     CONF_DISTRIBUTOR,
@@ -80,6 +85,12 @@ def _statistic_unit(commodity: int) -> str:
     if commodity == COMMODITY_ELECTRICITY:
         return UnitOfEnergy.KILO_WATT_HOUR
     return UnitOfVolume.CUBIC_METERS
+
+
+def _unit_class_for(commodity: int) -> str:
+    if commodity == COMMODITY_ELECTRICITY:
+        return EnergyConverter.UNIT_CLASS
+    return VolumeConverter.UNIT_CLASS
 
 
 def _name_for(entry: ConfigEntry, commodity: int) -> str:
@@ -160,11 +171,12 @@ async def async_import_file(
 
     statistic_id = _statistic_id(entry, expected)
     metadata: StatisticMetaData = {
-        "has_mean": False,
+        "mean_type": StatisticMeanType.NONE,
         "has_sum": True,
         "name": _name_for(entry, expected),
         "source": DOMAIN,
         "statistic_id": statistic_id,
+        "unit_class": _unit_class_for(expected),
         "unit_of_measurement": _statistic_unit(expected),
     }
     statistics = _build_statistics(merged)
