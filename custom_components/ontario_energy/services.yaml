@@ -1,0 +1,28 @@
+import_green_button_file:
+  name: Import Green Button file
+  description: >
+    Parse a Green Button (ESPI XML) file downloaded from your utility's
+    customer portal and import the interval readings into Home Assistant's
+    long-term statistics. The statistics appear in the Energy Dashboard tied
+    to the chosen Ontario Energy Board config entry. Re-importing the same
+    file is idempotent — duplicate intervals are deduplicated by the recorder.
+  fields:
+    file_path:
+      name: File path
+      description: Absolute path to the ESPI XML file (e.g. /config/ontario_energy/usage.xml).
+      required: true
+      example: /config/ontario_energy/2026-04-usage.xml
+      selector:
+        text:
+    config_entry_id:
+      name: Config entry
+      description: >
+        The Ontario Energy Board config entry to attach the imported
+        consumption to. The entry's utility type (electricity or gas) must
+        match the file's commodity.
+      required: true
+      selector:
+        config_entry:
+          integration: ontario_energy
+  response:
+    optional: true

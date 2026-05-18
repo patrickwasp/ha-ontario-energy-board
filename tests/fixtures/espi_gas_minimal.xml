@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:espi="http://naesb.org/espi">
+  <id>urn:uuid:aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa</id>
+  <title>Green Button Subscription Feed</title>
+  <updated>2026-04-01T00:00:00Z</updated>
+
+  <entry>
+    <id>urn:uuid:bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb</id>
+    <link rel="self" href="https://services.example.com/espi/resource/ReadingType/9"/>
+    <link rel="up" href="https://services.example.com/espi/resource/ReadingType"/>
+    <title>Natural Gas Reading Type</title>
+    <content>
+      <espi:ReadingType>
+        <espi:accumulationBehaviour>4</espi:accumulationBehaviour>
+        <espi:commodity>7</espi:commodity>
+        <espi:dataQualifier>12</espi:dataQualifier>
+        <espi:flowDirection>1</espi:flowDirection>
+        <espi:intervalLength>86400</espi:intervalLength>
+        <espi:kind>12</espi:kind>
+        <espi:powerOfTenMultiplier>0</espi:powerOfTenMultiplier>
+        <espi:timeAttribute>0</espi:timeAttribute>
+        <espi:uom>119</espi:uom>
+      </espi:ReadingType>
+    </content>
+    <updated>2026-04-01T00:00:00Z</updated>
+    <published>2026-04-01T00:00:00Z</published>
+  </entry>
+
+  <entry>
+    <id>urn:uuid:cccccccc-cccc-cccc-cccc-cccccccccccc</id>
+    <link rel="self" href="https://services.example.com/espi/resource/IntervalBlock/9"/>
+    <link rel="related" href="https://services.example.com/espi/resource/ReadingType/9"/>
+    <title>Gas Interval Data</title>
+    <content>
+      <espi:IntervalBlock>
+        <espi:interval>
+          <espi:duration>259200</espi:duration>
+          <espi:start>1769904000</espi:start>
+        </espi:interval>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>86400</espi:duration>
+            <espi:start>1769904000</espi:start>
+          </espi:timePeriod>
+          <espi:value>3</espi:value>
+        </espi:IntervalReading>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>86400</espi:duration>
+            <espi:start>1769990400</espi:start>
+          </espi:timePeriod>
+          <espi:value>5</espi:value>
+        </espi:IntervalReading>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>86400</espi:duration>
+            <espi:start>1770076800</espi:start>
+          </espi:timePeriod>
+          <espi:value>4</espi:value>
+        </espi:IntervalReading>
+      </espi:IntervalBlock>
+    </content>
+  </entry>
+</feed>

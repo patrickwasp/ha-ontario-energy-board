@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ha-ontario-energy-board"
-version = "0.3.0"
+version = "0.4.0"
 description = "Ontario Energy Board electricity rates as a Home Assistant integration."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -80,6 +80,8 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**/*" = ["PT", "B"]
+# Relative imports within an integration's own package are the HA convention.
+"custom_components/**/*" = ["TID252"]
 
 [tool.mypy]
 # Intentionally not pinning ``python_version`` so each CI matrix entry

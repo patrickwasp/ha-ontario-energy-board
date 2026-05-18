@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:espi="http://naesb.org/espi">
+  <id>urn:uuid:11111111-1111-1111-1111-111111111111</id>
+  <title>Green Button Subscription Feed</title>
+  <updated>2026-04-01T00:00:00Z</updated>
+
+  <entry>
+    <id>urn:uuid:22222222-2222-2222-2222-222222222222</id>
+    <link rel="self" href="https://services.example.com/espi/resource/ReadingType/1"/>
+    <link rel="up" href="https://services.example.com/espi/resource/ReadingType"/>
+    <title>Type of Meter Reading Data</title>
+    <content>
+      <espi:ReadingType>
+        <espi:accumulationBehaviour>4</espi:accumulationBehaviour>
+        <espi:commodity>1</espi:commodity>
+        <espi:dataQualifier>12</espi:dataQualifier>
+        <espi:flowDirection>1</espi:flowDirection>
+        <espi:intervalLength>3600</espi:intervalLength>
+        <espi:kind>12</espi:kind>
+        <espi:powerOfTenMultiplier>0</espi:powerOfTenMultiplier>
+        <espi:timeAttribute>0</espi:timeAttribute>
+        <espi:uom>72</espi:uom>
+      </espi:ReadingType>
+    </content>
+    <updated>2026-04-01T00:00:00Z</updated>
+    <published>2026-04-01T00:00:00Z</published>
+  </entry>
+
+  <entry>
+    <id>urn:uuid:33333333-3333-3333-3333-333333333333</id>
+    <link rel="self" href="https://services.example.com/espi/resource/IntervalBlock/1"/>
+    <link rel="up" href="https://services.example.com/espi/resource/IntervalBlock"/>
+    <link rel="related" href="https://services.example.com/espi/resource/ReadingType/1"/>
+    <title>Energy Interval Data</title>
+    <content>
+      <espi:IntervalBlock>
+        <espi:interval>
+          <espi:duration>14400</espi:duration>
+          <espi:start>1769904000</espi:start>
+        </espi:interval>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>3600</espi:duration>
+            <espi:start>1769904000</espi:start>
+          </espi:timePeriod>
+          <espi:value>500</espi:value>
+        </espi:IntervalReading>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>3600</espi:duration>
+            <espi:start>1769907600</espi:start>
+          </espi:timePeriod>
+          <espi:value>750</espi:value>
+        </espi:IntervalReading>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>3600</espi:duration>
+            <espi:start>1769911200</espi:start>
+          </espi:timePeriod>
+          <espi:value>1250</espi:value>
+        </espi:IntervalReading>
+        <espi:IntervalReading>
+          <espi:timePeriod>
+            <espi:duration>3600</espi:duration>
+            <espi:start>1769914800</espi:start>
+          </espi:timePeriod>
+          <espi:value>900</espi:value>
+        </espi:IntervalReading>
+      </espi:IntervalBlock>
+    </content>
+    <updated>2026-04-01T05:00:00Z</updated>
+    <published>2026-04-01T05:00:00Z</published>
+  </entry>
+</feed>

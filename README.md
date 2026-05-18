@@ -34,6 +34,12 @@ Architected to mirror Home Assistant core conventions (config-flow-only, `DataUp
 - HA diagnostics export
 - Translations: English, French (Canadian), Spanish, Italian, Portuguese, Polish, Arabic, Urdu, Simplified Chinese
 
+**Green Button consumption import (manual)**
+
+- Import [Green Button "Download My Data"](https://www.oeb.ca/consumer-information-and-protection/green-button) ESPI XML files exported from your utility's customer portal
+- Hourly electricity intervals (kWh) and daily gas intervals (m³) become long-term statistics in the Energy Dashboard, attached to the matching rate config entry
+- Single service call (`ontario_energy.import_green_button_file`) with the file path and target config entry — see [Green Button import](#green-button-import-manual-file-upload) below
+
 ## Installation
 
 ### HACS
@@ -70,6 +76,31 @@ Plan can be changed later via Settings → Devices & services → ⋯ → Config
 2. Pick your distributor (Enbridge Gas, EPCOR Natural Gas, or Union Gas).
 3. Pick your service area (e.g. "All" for Enbridge; "North East", "North West", "South" for Union; "Aylmer", "South Bruce" for EPCOR).
 4. Pick your rate class (the residential default is typically `1`, `01`, or `M1` depending on distributor).
+
+## Green Button import (manual file upload)
+
+Ontario's Green Button program — mandated by the OEB since November 2023 — lets you download your own consumption data as a standardized ESPI XML file from your utility's customer portal. This integration accepts that file and imports the interval readings as long-term statistics that show up in the Energy Dashboard alongside the rate sensors.
+
+**Once-per-month workflow:**
+
+1. Log into your utility's customer portal (Hydro One, Alectra, Enbridge, etc.) and use the **Green Button → Download My Data** option to save an ESPI XML file. Most utilities expose hourly intervals for electricity and daily intervals for gas.
+2. Copy the file to your Home Assistant config dir, e.g. `/config/ontario_energy/2026-04-usage.xml`.
+3. Call the `ontario_energy.import_green_button_file` service:
+
+   ```yaml
+   service: ontario_energy.import_green_button_file
+   data:
+     file_path: /config/ontario_energy/2026-04-usage.xml
+     config_entry_id: 01HZX8YJ4K0...   # your electricity or gas entry
+   ```
+
+   You can find the entry ID in **Settings → Devices & services → Ontario Energy Board → ⋯ → Settings ID**, or via Developer Tools → Services.
+
+4. The intervals become an external statistic named `ontario_energy:gb_<entry_id>_<elec|gas>_consumption`. The Energy Dashboard auto-discovers it on its next refresh — point your dashboard at it as a consumption source and you'll see actual usage alongside the rate sensors.
+
+Re-running the service with the same file is safe — the recorder deduplicates intervals by start time.
+
+**Future: "Connect My Data" OAuth login.** Green Button also defines a "Connect My Data" mode where a registered third-party application gets ongoing API access to your utility account via OAuth 2.0 — no manual file download per cycle. Home Assistant has [first-class OAuth2 infrastructure](https://developers.home-assistant.io/docs/auth_api/) (`AbstractOAuth2FlowHandler`, Application Credentials, automatic token refresh, the `my.home-assistant.io` redirect proxy) so the HA side is solved. The blocker is per-utility: every Ontario utility (Enbridge, Alectra, Hydro One, …) runs its own third-party-application approval process with manual review. A v2 of this integration may add Connect My Data on a per-utility basis, starting with whichever utility's onboarding completes first; the ESPI parser shipped today is the same one Connect My Data will use.
 
 ## Schedules (verified from OEB)
 

@@ -62,6 +62,24 @@ def bill_data_gs_minimal_xml() -> bytes:
 
 
 @pytest.fixture
+def espi_electricity_xml() -> bytes:
+    """Minimal ESPI XML — 4 hourly electricity readings."""
+    return (FIXTURES_DIR / "espi_electricity_minimal.xml").read_bytes()
+
+
+@pytest.fixture
+def espi_gas_xml() -> bytes:
+    """Minimal ESPI XML — 3 daily gas readings."""
+    return (FIXTURES_DIR / "espi_gas_minimal.xml").read_bytes()
+
+
+@pytest.fixture
+def espi_malformed_xml() -> bytes:
+    """Intentionally broken ESPI XML."""
+    return (FIXTURES_DIR / "espi_malformed.xml").read_bytes()
+
+
+@pytest.fixture
 def gas_bill_data_xml() -> bytes:
     """Full OEB gas feed snapshot (3 distributors, 6 rows)."""
     return (FIXTURES_DIR / "gas_bill_data.xml").read_bytes()
