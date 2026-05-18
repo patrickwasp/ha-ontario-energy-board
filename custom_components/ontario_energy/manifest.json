@@ -1,6 +1,7 @@
 {
   "domain": "ontario_energy",
   "name": "Ontario Energy Board",
+  "after_dependencies": ["recorder"],
   "codeowners": ["@patrickwasp"],
   "config_flow": true,
   "documentation": "https://github.com/patrickwasp/ha-ontario-energy-board",

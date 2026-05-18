@@ -24,5 +24,3 @@ import_green_button_file:
       selector:
         config_entry:
           integration: ontario_energy
-  response:
-    optional: true
