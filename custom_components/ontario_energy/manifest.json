@@ -9,5 +9,5 @@
   "issue_tracker": "https://github.com/patrickwasp/ha-ontario-energy-board/issues",
   "quality_scale": "bronze",
   "requirements": ["defusedxml==0.7.1"],
-  "version": "0.4.0"
+  "version": "0.0.2"
 }
