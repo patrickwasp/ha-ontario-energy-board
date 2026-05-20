@@ -1,0 +1,82 @@
+name: release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write  # needed to upload the integration zip asset
+
+jobs:
+  # Re-run every validation check against the released tag's commit, even if
+  # the same commit was already validated on push. Releases sometimes point at
+  # older tags or get amended; this is the hard gate.
+  tests:
+    name: Tests (ruff + mypy + pytest)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: mypy custom_components
+      - run: pytest
+
+  hassfest:
+    name: HA hassfest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: home-assistant/actions/hassfest@master
+
+  hacs:
+    name: HACS validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: hacs/action@main
+        with:
+          category: integration
+
+  # Verify the manifest.json version matches the GitHub release tag.
+  # HACS doesn't enforce this, but mismatched versions confuse users
+  # (the HACS UI shows the manifest version, not the tag).
+  verify-version:
+    name: Verify manifest version matches release tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check manifest version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          manifest_version=$(jq -r .version custom_components/ontario_energy/manifest.json)
+          tag_version="${TAG#v}"
+          if [ "$manifest_version" != "$tag_version" ]; then
+            echo "::error::manifest.json version ($manifest_version) does not match release tag ($tag_version)"
+            exit 1
+          fi
+          echo "manifest version $manifest_version matches release tag $TAG"
+
+  # Bundle the integration directory into a zip asset attached to the release.
+  # HACS will use the GitHub source tarball by default, but a clean zip with
+  # just the custom_components/ontario_energy/ contents is friendlier for users
+  # doing manual installs and is the conventional artifact for HACS releases.
+  publish:
+    name: Attach release artifact
+    needs: [tests, hassfest, hacs, verify-version]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Bundle integration zip
+        run: |
+          cd custom_components/ontario_energy
+          zip -r "${GITHUB_WORKSPACE}/ontario_energy.zip" . \
+            -x '*__pycache__*' -x '*.pyc' -x '.DS_Store'
+      - name: Attach zip to release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: ontario_energy.zip
