@@ -1,0 +1,77 @@
+{
+  "entity": {
+    "sensor": {
+      "current_tou_price": { "default": "mdi:cash-clock" },
+      "current_tou_period": {
+        "default": "mdi:clock-time-four-outline",
+        "state": {
+          "on": "mdi:lightning-bolt",
+          "mid": "mdi:weather-partly-cloudy",
+          "off": "mdi:weather-night"
+        }
+      },
+      "current_ulo_price": { "default": "mdi:cash-clock" },
+      "current_ulo_period": {
+        "default": "mdi:clock-time-four-outline",
+        "state": {
+          "overnight": "mdi:weather-night",
+          "weekend_off": "mdi:weather-sunny-off",
+          "mid": "mdi:weather-partly-cloudy",
+          "on": "mdi:lightning-bolt"
+        }
+      },
+      "tou_on_peak_rate": { "default": "mdi:cash" },
+      "tou_mid_peak_rate": { "default": "mdi:cash" },
+      "tou_off_peak_rate": { "default": "mdi:cash" },
+      "ulo_on_peak_rate": { "default": "mdi:cash" },
+      "ulo_mid_peak_rate": { "default": "mdi:cash" },
+      "ulo_weekend_off_peak_rate": { "default": "mdi:cash" },
+      "ulo_overnight_rate": { "default": "mdi:cash" },
+      "tier1_rate": { "default": "mdi:cash" },
+      "tier2_rate": { "default": "mdi:cash" },
+      "tier1_threshold": { "default": "mdi:gauge" },
+      "service_charge": { "default": "mdi:receipt-text" },
+      "distribution_volumetric": { "default": "mdi:transmission-tower" },
+      "network_charge": { "default": "mdi:transmission-tower-export" },
+      "connection_charge": { "default": "mdi:transit-connection-variant" },
+      "wmsr_charge": { "default": "mdi:receipt-text-outline" },
+      "rrrp_charge": { "default": "mdi:receipt-text-outline" },
+      "sss_admin_fee": { "default": "mdi:receipt-text-outline" },
+      "loss_factor": { "default": "mdi:percent" },
+      "hst_rate": { "default": "mdi:percent-outline" },
+      "rebate_rate": { "default": "mdi:cash-refund" },
+      "rate_year": { "default": "mdi:calendar" },
+      "gas_monthly_customer_charge": { "default": "mdi:receipt-text" },
+      "gas_commodity_charge": { "default": "mdi:fire" },
+      "gas_commodity_pa": { "default": "mdi:swap-vertical" },
+      "gas_transportation_charge": { "default": "mdi:pipe" },
+      "gas_transportation_pa": { "default": "mdi:swap-vertical" },
+      "gas_storage_charge": { "default": "mdi:gas-cylinder" },
+      "gas_storage_pa": { "default": "mdi:swap-vertical" },
+      "gas_delivery_pa": { "default": "mdi:swap-vertical" },
+      "gas_federal_carbon_charge": { "default": "mdi:molecule-co2" },
+      "gas_facility_carbon_charge": { "default": "mdi:molecule-co2" },
+      "gas_hst_rate": { "default": "mdi:percent-outline" },
+      "gas_effective_year": { "default": "mdi:calendar" },
+      "gas_typical_consumption": { "default": "mdi:gas-burner" },
+      "gas_delivery_tier_1_rate": { "default": "mdi:cash" },
+      "gas_delivery_tier_1_low": { "default": "mdi:gauge-low" },
+      "gas_delivery_tier_1_high": { "default": "mdi:gauge" },
+      "gas_delivery_tier_2_rate": { "default": "mdi:cash" },
+      "gas_delivery_tier_2_low": { "default": "mdi:gauge-low" },
+      "gas_delivery_tier_2_high": { "default": "mdi:gauge" },
+      "gas_delivery_tier_3_rate": { "default": "mdi:cash" },
+      "gas_delivery_tier_3_low": { "default": "mdi:gauge-low" },
+      "gas_delivery_tier_3_high": { "default": "mdi:gauge" },
+      "gas_delivery_tier_4_rate": { "default": "mdi:cash" },
+      "gas_delivery_tier_4_low": { "default": "mdi:gauge-low" },
+      "gas_delivery_tier_4_high": { "default": "mdi:gauge" },
+      "gas_delivery_tier_5_rate": { "default": "mdi:cash" },
+      "gas_delivery_tier_5_low": { "default": "mdi:gauge-low" },
+      "gas_delivery_tier_5_high": { "default": "mdi:gauge" }
+    }
+  },
+  "services": {
+    "import_green_button_file": { "service": "mdi:file-upload" }
+  }
+}
