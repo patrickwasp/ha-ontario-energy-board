@@ -122,6 +122,7 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
                     ),
                 }
             ),
+            last_step=False,
         )
 
     # --- Electricity branch ---------------------------------------------
@@ -135,7 +136,10 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
         if rows is None:
             errors["base"] = "cannot_connect"
             return self.async_show_form(
-                step_id="distributor", data_schema=vol.Schema({}), errors=errors
+                step_id="distributor",
+                data_schema=vol.Schema({}),
+                errors=errors,
+                last_step=False,
             )
 
         distributors = list_distributors(rows)
@@ -159,6 +163,7 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
                 }
             ),
             errors=errors,
+            last_step=False,
         )
 
     async def async_step_class(
@@ -219,7 +224,10 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
         if rows is None:
             errors["base"] = "cannot_connect"
             return self.async_show_form(
-                step_id="gas_distributor", data_schema=vol.Schema({}), errors=errors
+                step_id="gas_distributor",
+                data_schema=vol.Schema({}),
+                errors=errors,
+                last_step=False,
             )
 
         distributors = list_gas_distributors(rows)
@@ -243,6 +251,7 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
                 }
             ),
             errors=errors,
+            last_step=False,
         )
 
     async def async_step_gas_service_area(
@@ -274,6 +283,7 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
                     ),
                 }
             ),
+            last_step=False,
         )
 
     async def async_step_gas_rate_class(
