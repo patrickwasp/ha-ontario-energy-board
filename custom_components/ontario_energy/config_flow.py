@@ -190,11 +190,14 @@ class OEBConfigFlow(ConfigFlow, domain=DOMAIN):
                 options={CONF_PLAN: plan},
             )
 
+        # Default to RESIDENTIAL when available (the most common case);
+        # otherwise fall back to whatever's first in the list.
+        default_class = "RESIDENTIAL" if "RESIDENTIAL" in classes else classes[0]
         return self.async_show_form(
             step_id="class",
             data_schema=vol.Schema(
                 {
-                    vol.Required(CONF_CLASS): SelectSelector(
+                    vol.Required(CONF_CLASS, default=default_class): SelectSelector(
                         SelectSelectorConfig(
                             options=classes,
                             mode=SelectSelectorMode.DROPDOWN,

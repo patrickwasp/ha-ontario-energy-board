@@ -75,7 +75,7 @@
     },
     "plan": {
       "options": {
-        "auto": "Automático (exponer todo)",
+        "auto": "Todos los planes",
         "tou": "Tarifa horaria",
         "ulo": "Tarifa nocturna ultrabaja",
         "tiered": "Por tramos"

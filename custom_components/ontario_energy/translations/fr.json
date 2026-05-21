@@ -75,7 +75,7 @@
     },
     "plan": {
       "options": {
-        "auto": "Auto (tout exposer)",
+        "auto": "Tous les plans",
         "tou": "Tarification selon l'heure",
         "ulo": "Très basse la nuit",
         "tiered": "Par paliers"

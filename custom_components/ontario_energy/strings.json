@@ -75,7 +75,7 @@
     },
     "plan": {
       "options": {
-        "auto": "Auto (expose all)",
+        "auto": "All plans",
         "tou": "Time-of-Use",
         "ulo": "Ultra-Low Overnight",
         "tiered": "Tiered"
@@ -84,7 +84,9 @@
   },
   "entity": {
     "sensor": {
-      "current_tou_price": { "name": "Current TOU price" },
+      "current_tou_price": {
+        "name": "Current TOU price"
+      },
       "current_tou_period": {
         "name": "Current TOU period",
         "state": {
@@ -93,7 +95,9 @@
           "off": "Off-peak"
         }
       },
-      "current_ulo_price": { "name": "Current ULO price" },
+      "current_ulo_price": {
+        "name": "Current ULO price"
+      },
       "current_ulo_period": {
         "name": "Current ULO period",
         "state": {
@@ -103,55 +107,153 @@
           "on": "On-peak"
         }
       },
-      "tou_on_peak_rate": { "name": "TOU on-peak rate" },
-      "tou_mid_peak_rate": { "name": "TOU mid-peak rate" },
-      "tou_off_peak_rate": { "name": "TOU off-peak rate" },
-      "ulo_on_peak_rate": { "name": "ULO on-peak rate" },
-      "ulo_mid_peak_rate": { "name": "ULO mid-peak rate" },
-      "ulo_weekend_off_peak_rate": { "name": "ULO weekend off-peak rate" },
-      "ulo_overnight_rate": { "name": "ULO overnight rate" },
-      "tier1_rate": { "name": "Tier 1 rate" },
-      "tier2_rate": { "name": "Tier 2 rate" },
-      "tier1_threshold": { "name": "Tier 1 threshold" },
-      "service_charge": { "name": "Service charge" },
-      "distribution_volumetric": { "name": "Distribution charge" },
-      "network_charge": { "name": "Network charge" },
-      "connection_charge": { "name": "Connection charge" },
-      "wmsr_charge": { "name": "WMSR charge" },
-      "rrrp_charge": { "name": "RRRP charge" },
-      "sss_admin_fee": { "name": "SSS admin fee" },
-      "loss_factor": { "name": "Loss factor" },
-      "hst_rate": { "name": "HST rate" },
-      "rebate_rate": { "name": "Ontario Electricity Rebate" },
-      "rate_year": { "name": "Rate year" },
-      "gas_monthly_customer_charge": { "name": "Monthly customer charge" },
-      "gas_commodity_charge": { "name": "Gas commodity charge" },
-      "gas_commodity_pa": { "name": "Gas commodity price adjustment" },
-      "gas_transportation_charge": { "name": "Gas transportation charge" },
-      "gas_transportation_pa": { "name": "Gas transportation price adjustment" },
-      "gas_storage_charge": { "name": "Gas storage charge" },
-      "gas_storage_pa": { "name": "Gas storage price adjustment" },
-      "gas_delivery_pa": { "name": "Gas delivery price adjustment" },
-      "gas_federal_carbon_charge": { "name": "Gas federal carbon charge" },
-      "gas_facility_carbon_charge": { "name": "Gas facility carbon charge" },
-      "gas_hst_rate": { "name": "Gas HST rate" },
-      "gas_effective_year": { "name": "Gas rate effective year" },
-      "gas_typical_consumption": { "name": "Typical monthly consumption" },
-      "gas_delivery_tier_1_rate": { "name": "Gas delivery tier 1 rate" },
-      "gas_delivery_tier_1_low": { "name": "Gas delivery tier 1 lower bound" },
-      "gas_delivery_tier_1_high": { "name": "Gas delivery tier 1 upper bound" },
-      "gas_delivery_tier_2_rate": { "name": "Gas delivery tier 2 rate" },
-      "gas_delivery_tier_2_low": { "name": "Gas delivery tier 2 lower bound" },
-      "gas_delivery_tier_2_high": { "name": "Gas delivery tier 2 upper bound" },
-      "gas_delivery_tier_3_rate": { "name": "Gas delivery tier 3 rate" },
-      "gas_delivery_tier_3_low": { "name": "Gas delivery tier 3 lower bound" },
-      "gas_delivery_tier_3_high": { "name": "Gas delivery tier 3 upper bound" },
-      "gas_delivery_tier_4_rate": { "name": "Gas delivery tier 4 rate" },
-      "gas_delivery_tier_4_low": { "name": "Gas delivery tier 4 lower bound" },
-      "gas_delivery_tier_4_high": { "name": "Gas delivery tier 4 upper bound" },
-      "gas_delivery_tier_5_rate": { "name": "Gas delivery tier 5 rate" },
-      "gas_delivery_tier_5_low": { "name": "Gas delivery tier 5 lower bound" },
-      "gas_delivery_tier_5_high": { "name": "Gas delivery tier 5 upper bound" }
+      "tou_on_peak_rate": {
+        "name": "TOU on-peak rate"
+      },
+      "tou_mid_peak_rate": {
+        "name": "TOU mid-peak rate"
+      },
+      "tou_off_peak_rate": {
+        "name": "TOU off-peak rate"
+      },
+      "ulo_on_peak_rate": {
+        "name": "ULO on-peak rate"
+      },
+      "ulo_mid_peak_rate": {
+        "name": "ULO mid-peak rate"
+      },
+      "ulo_weekend_off_peak_rate": {
+        "name": "ULO weekend off-peak rate"
+      },
+      "ulo_overnight_rate": {
+        "name": "ULO overnight rate"
+      },
+      "tier1_rate": {
+        "name": "Tier 1 rate"
+      },
+      "tier2_rate": {
+        "name": "Tier 2 rate"
+      },
+      "tier1_threshold": {
+        "name": "Tier 1 threshold"
+      },
+      "service_charge": {
+        "name": "Service charge"
+      },
+      "distribution_volumetric": {
+        "name": "Distribution charge"
+      },
+      "network_charge": {
+        "name": "Network charge"
+      },
+      "connection_charge": {
+        "name": "Connection charge"
+      },
+      "wmsr_charge": {
+        "name": "WMSR charge"
+      },
+      "rrrp_charge": {
+        "name": "RRRP charge"
+      },
+      "sss_admin_fee": {
+        "name": "SSS admin fee"
+      },
+      "loss_factor": {
+        "name": "Loss factor"
+      },
+      "hst_rate": {
+        "name": "HST rate"
+      },
+      "rebate_rate": {
+        "name": "Ontario Electricity Rebate"
+      },
+      "rate_year": {
+        "name": "Rate year"
+      },
+      "gas_monthly_customer_charge": {
+        "name": "Monthly customer charge"
+      },
+      "gas_commodity_charge": {
+        "name": "Gas commodity charge"
+      },
+      "gas_commodity_pa": {
+        "name": "Gas commodity price adjustment"
+      },
+      "gas_transportation_charge": {
+        "name": "Gas transportation charge"
+      },
+      "gas_transportation_pa": {
+        "name": "Gas transportation price adjustment"
+      },
+      "gas_storage_charge": {
+        "name": "Gas storage charge"
+      },
+      "gas_storage_pa": {
+        "name": "Gas storage price adjustment"
+      },
+      "gas_delivery_pa": {
+        "name": "Gas delivery price adjustment"
+      },
+      "gas_federal_carbon_charge": {
+        "name": "Gas federal carbon charge"
+      },
+      "gas_facility_carbon_charge": {
+        "name": "Gas facility carbon charge"
+      },
+      "gas_hst_rate": {
+        "name": "Gas HST rate"
+      },
+      "gas_effective_year": {
+        "name": "Gas rate effective year"
+      },
+      "gas_typical_consumption": {
+        "name": "Typical monthly consumption"
+      },
+      "gas_delivery_tier_1_rate": {
+        "name": "Gas delivery tier 1 rate"
+      },
+      "gas_delivery_tier_1_low": {
+        "name": "Gas delivery tier 1 lower bound"
+      },
+      "gas_delivery_tier_1_high": {
+        "name": "Gas delivery tier 1 upper bound"
+      },
+      "gas_delivery_tier_2_rate": {
+        "name": "Gas delivery tier 2 rate"
+      },
+      "gas_delivery_tier_2_low": {
+        "name": "Gas delivery tier 2 lower bound"
+      },
+      "gas_delivery_tier_2_high": {
+        "name": "Gas delivery tier 2 upper bound"
+      },
+      "gas_delivery_tier_3_rate": {
+        "name": "Gas delivery tier 3 rate"
+      },
+      "gas_delivery_tier_3_low": {
+        "name": "Gas delivery tier 3 lower bound"
+      },
+      "gas_delivery_tier_3_high": {
+        "name": "Gas delivery tier 3 upper bound"
+      },
+      "gas_delivery_tier_4_rate": {
+        "name": "Gas delivery tier 4 rate"
+      },
+      "gas_delivery_tier_4_low": {
+        "name": "Gas delivery tier 4 lower bound"
+      },
+      "gas_delivery_tier_4_high": {
+        "name": "Gas delivery tier 4 upper bound"
+      },
+      "gas_delivery_tier_5_rate": {
+        "name": "Gas delivery tier 5 rate"
+      },
+      "gas_delivery_tier_5_low": {
+        "name": "Gas delivery tier 5 lower bound"
+      },
+      "gas_delivery_tier_5_high": {
+        "name": "Gas delivery tier 5 upper bound"
+      }
     }
   }
 }

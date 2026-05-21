@@ -75,7 +75,7 @@
     },
     "plan": {
       "options": {
-        "auto": "Auto (mostra tutto)",
+        "auto": "Tutti i piani",
         "tou": "Tariffa per fascia oraria",
         "ulo": "Tariffa notturna ultraridotta",
         "tiered": "A fasce"
