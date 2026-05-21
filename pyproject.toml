@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ha-ontario-energy-board"
-version = "0.0.2"
+version = "0.0.3"
 description = "Ontario Energy Board electricity rates as a Home Assistant integration."
 readme = "README.md"
 license = { file = "LICENSE" }
